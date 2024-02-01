@@ -19,6 +19,9 @@ class WifisdsupportPlugin(octoprint.plugin.SettingsPlugin,
 
   ##~~ SettingsPlugin mixin
 
+  def __init__(self):
+    self._serial_obj = None
+
   def get_settings_defaults(self):
     return dict(
       wifi_sd_ip = "flashair"
@@ -44,12 +47,12 @@ class WifisdsupportPlugin(octoprint.plugin.SettingsPlugin,
 
         # version check: github repository
         type="github_release",
-        user="Flautz",
+        user="MSmthng",
         repo="OctoPrint-WifiSdSupport",
         current=self._plugin_version,
 
         # update method: pip
-        pip="https://github.com/Flautz/OctoPrint-WifiSdSupport/archive/{target_version}.zip"
+        pip="https://github.com/MSmthng/OctoPrint-WifiSdSupport/archive/{target_version}.zip"
       )
     )
 
